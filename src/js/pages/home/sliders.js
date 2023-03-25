@@ -85,7 +85,7 @@ function initSectionsSliders() {
 		//allowTouchMove: false,
 		//touchStartPreventDefault: true,
 		breakpoints: {
-			991.98: {
+			993: {
 				slidesPerView: 2,
 				direction: "horizontal",
 			},
@@ -94,18 +94,18 @@ function initSectionsSliders() {
 	//const mainContainerElem = document.querySelector(".inner");
 	//allowScroll(sectionsSlider, mainContainerElem);
 }
-function passProductsSliderHeightToContainer() {
-	const sliderContainerElem = document.querySelector(".popular-products-slider");
-	const sliderElem = document.querySelector(".popular-products-slider__swiper");
-	const setParentHeight = _.debounce(() => {
-		sliderContainerElem.style.height = `${sliderElem.offsetHeight}px`;
-	}, 300);
-	const observer = new ResizeObserver((entries) => {
-		if (!entries.length) return;
-		setParentHeight();
-	});
-	observer.observe(sliderElem);
-}
+// function passProductsSliderHeightToContainer() {
+// 	const sliderContainerElem = document.querySelector(".popular-products-slider");
+// 	const sliderElem = document.querySelector(".popular-products-slider__swiper");
+// 	const setParentHeight = _.debounce(() => {
+// 		sliderContainerElem.style.height = `${sliderElem.offsetHeight}px`;
+// 	}, 300);
+// 	const observer = new ResizeObserver((entries) => {
+// 		if (!entries.length) return;
+// 		setParentHeight();
+// 	});
+// 	observer.observe(sliderElem);
+// }
 
 window.addEventListener("load", function (e) {
 	initSectionsSliders();

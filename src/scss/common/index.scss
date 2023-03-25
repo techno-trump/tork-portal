@@ -84,6 +84,7 @@ $mobileSmall: px(479.98); // Телефоны S
 html {
 	height: 100%;
 	font-size: $fontSize + 0px;
+	overflow: hidden;
 	// @media (min-width: $mbpTablet) {
 	// 	font-size: calc(100vw / $maxWidth * $fontSize);
 	// }

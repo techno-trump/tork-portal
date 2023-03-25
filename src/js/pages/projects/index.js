@@ -65,6 +65,7 @@ function onLoaded() {
 	onDrawerInputChange("placing", () => window.drawers.close("placing"));
 	initTextureCloneSelectMirroring();
 	onPlacingChange();
+	$.fancybox.defaults.backFocus = false;
 }
 function onPlacingChange() {
 	const rootElem = document.querySelector("#placing-options");

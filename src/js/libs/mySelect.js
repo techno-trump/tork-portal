@@ -105,6 +105,7 @@ export const InputBodyContent = ({ }) => {
 
 	useEffect(() => {
 		const inputHandler = (event) => {
+				log("InputBodyContent :  onInput", event);
 			setUserInput(event.target.value);
 		}
 		const focusHandler = (event) => {
@@ -112,10 +113,12 @@ export const InputBodyContent = ({ }) => {
 		}
 		if (!wrapRef.current) return;
 		nativeInput.addEventListener("input", inputHandler);
+		nativeInput.addEventListener("change", inputHandler);
 		nativeInput.addEventListener("focus", focusHandler);
 		wrapRef.current.appendChild(nativeInput);
 		return () => {
 			nativeInput.removeEventListener("input", inputHandler);
+			nativeInput.removeEventListener("change", inputHandler);
 			nativeInput.removeEventListener("focus", focusHandler);
 		}
 	}, []);
@@ -244,6 +247,7 @@ const Select = ({ nativeInput, ctxRef, initComplete, initialOptions, multiselect
 		dispatch({ type: "setOptions", payload: { data } });
 	};
 	const setUserInput = (value, silentMode) => {
+			log("Set user Input: ", value, silentMode);
 		dispatch({ type: "setUserInput", payload: { value, silentMode } });
 	};
 
@@ -331,13 +335,13 @@ const Select = ({ nativeInput, ctxRef, initComplete, initialOptions, multiselect
 	useEffect(() => {
 		if (!withNativeInput) return;
 		const blurHandler = (event) => {
-			if (!state.userInput) {
+			if (!userInput) {
 				resetSelected(nativeInput);
 			}
 		}
 		nativeInput.addEventListener("blur", blurHandler);
 		return () => nativeInput.removeEventListener("blur", blurHandler);
-	}, [withNativeInput]);
+	}, [withNativeInput, userInput]);
 
 	// Отслеживаем клик за границами поля
 	useEffect(() => {
