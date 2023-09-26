@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'LiberationSans';
+    src: local('LiberationSans-Bold'), url('../fonts/LiberationSans-Bold.woff2') format('woff2'),
+        url('../fonts/LiberationSans-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LiberationSans';
+    src: local('LiberationSans-Regular'), url('../fonts/LiberationSans-Regular.woff2') format('woff2'),
+        url('../fonts/LiberationSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LiberationSans';
+    src: local('LiberationSans-Regular'), url('../fonts/LiberationSans-Regular.woff2') format('woff2'),
+        url('../fonts/LiberationSans-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LiberationSans';
+    src: local('LiberationSans-Regular'), url('../fonts/LiberationSans-Regular.woff2') format('woff2'),
+        url('../fonts/LiberationSans-Regular.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}

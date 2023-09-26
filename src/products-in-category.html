@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('htm/components/head.htm',{
+		"title":"Продукты в категории",
+		"stylesheets":"<link rel='stylesheet' href='libs/swiper-9.2.3/swiper-bundle.min.css'><link rel='stylesheet' href='css/common.min.css'><link rel='stylesheet' href='css/products-in-category.min.css'>",
+		"scripts":"<script defered src='libs/swiper-9.2.3/swiper-bundle.min.js'></script><script src='js/products-in-category.min.js'></script>"
+	})
+	<body>
+		@@include('htm/components/header.htm',{"className":"header_with-bg"})
+		@@include('htm/pages/products-in-category/main.htm',{"className":"page__main page__main_with-shift"})
+		@@include('htm/components/footer.htm',{"className":"page__footer"})
+		@@include('htm/components/shared-drawers.htm',{})
+	</body>
+</html>

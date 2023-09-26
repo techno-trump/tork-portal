@@ -1,33 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{
-		"title":"Greenau - DESIGN POTS",
-		"stylesheets":"<link rel='stylesheet' href='css/common.min.css'><link rel='stylesheet' href='css/home.min.css'>",
-		"scripts":""
+	@@include('htm/components/head.htm',{
+		"title":"Tork - главная страница",
+		"stylesheets":"<link rel='stylesheet' href='libs/swiper-9.2.3/swiper-bundle.min.css'><link rel='stylesheet' href='css/common.min.css'><link rel='stylesheet' href='css/home.min.css'>",
+		"scripts":"<script defered src='libs/swiper-9.2.3/swiper-bundle.min.js'></script><script defered src='js/home.min.js'></script>"
 	})
 	<body>
-		@@include('html/_splash.htm', {})
-		<div class="wrapper">
-			@@include('html/_header.htm',{
-				"style":""
-			})
-			<div class="inner">
-				<main class="page">
-					<section class="section-slider swiper">
-						<div class="swiper-wrapper section-slider__wrapper">
-							<div class="swiper-slide page__info-area">
-								@@include('html/pages/home/_info.htm', {})
-							</div>
-							<div class="swiper-slide page__gallery-area">
-								@@include('html/pages/home/_gallery.htm', {})
-							</div>
-						</div>
-					</section>
-				</main>
-			</div>
-			@@include('html/_footer.htm',{"main":"active"})
-		</div>
-		@@include('html/pages/home/_drawers.htm', {})
-		@@include('html/pages/home/_js.htm',{})
+		@@include('htm/components/header.htm',{})
+		@@include('htm/pages/home/main.htm',{"className":"page__main"})
+		@@include('htm/components/footer.htm',{"className":"page__footer"})
+		@@include('htm/components/shared-drawers.htm',{})
 	</body>
 </html>

@@ -1,0 +1,77 @@
+$--linesOnHoverColor: $--aqua;
+$--linesDefaultColor: $--white;
+$--lineHeight: 3px;
+$--lineWidth: 30px;
+$--spaceBetween: 4px;
+$--borderRadius: 0;
+$--iconHeight: calc($--lineHeight * 3 + $--spaceBetween * 2);
+
+.burger-btn {
+	display: flex;
+	align-items: center;
+  min-height: 30px;
+	min-width: 30px;
+	transition: color 0.3s;
+	&__icon {
+		position: relative;
+		top: 0;
+		left: 0;
+		display: block;
+		width: $--lineWidth;
+		height: $--iconHeight;
+		transition: 0.3s all;
+		& > span {
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: $--lineHeight;
+			border-radius: $--borderRadius;
+			background-color: $--linesDefaultColor;
+			transition: transform 0.4s, top 0.2s, background-color 0.4s;
+			&:first-child {
+				top: 0;
+			}
+			&:nth-child(2) {
+				top: calc($--lineHeight + $--spaceBetween);
+				transition: transform 0.4s, top 0.2s;
+				transition-delay: 0.2s, 0s;
+			}
+			&:last-child {
+				top: calc(($--lineHeight + $--spaceBetween) * 2);
+				transition: all 0.4s;
+  			transition-delay: 0.1s;
+			}
+		}
+	}
+	&:hover {
+		color: $--linesOnHoverColor;
+		& > span {
+			& > span {
+				background-color: $--linesOnHoverColor;
+			}
+		}
+	}
+	&.active &__icon {
+		top: calc($--iconHeight * -0.1);
+	}
+	&.active {
+		& > span {
+			& > span {
+				background-color: $--linesOnHoverColor;
+				&:first-child {
+					top: calc($--iconHeight / 2);
+					transform: rotate(135deg);
+				}
+				&:nth-child(2) {
+					top: calc($--iconHeight / 2);
+					transform: rotate(-135deg);
+				}
+				&:last-child {
+					top: 0;
+					opacity: 0;
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+}

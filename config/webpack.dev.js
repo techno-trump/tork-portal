@@ -45,7 +45,7 @@ const config = {
 	entry: getEntryPoints(paths.src, "dev"),
 	output: {
 		path: `${paths.build}`,
-		filename: 'js/[name].min.js',
+		filename: 'js/[name].js',
 		publicPath: '/'
 	},
 	devServer: {
@@ -91,8 +91,8 @@ const config = {
 				test: /\.(scss|css)$/,
 				exclude: `${paths.src}/fonts`,
 				use: [
-					//'style-loader',
-					MiniCssExtractPlugin.loader,
+					'style-loader',
+					//MiniCssExtractPlugin.loader,
 					{
 						loader: 'string-replace-loader',
 						options: {
@@ -164,15 +164,10 @@ const config = {
 					noErrorOnMissing: true
 				},
 				{
-					from: `${srcFolder}/bundles/js`, to: `js/libs`,
+					from: `${srcFolder}/libs`, to: `./libs`,
 					noErrorOnMissing: true,
 					force: true
-				},
-				{
-					from: `${srcFolder}/bundles/css`, to: `css/libs`,
-					noErrorOnMissing: true,
-					force: true
-				},
+				}
 			],
 		}),
 	],

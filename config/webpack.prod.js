@@ -43,18 +43,28 @@ const config = {
 		type: 'filesystem'
 	},
 	optimization: {
-		minimizer: [new TerserPlugin({
-			extractComments: false,
-		})],
+		minimize: false,
 	},
 	entry: getEntryPoints(paths.src),
 	output: {
 		path: `${paths.build}`,
-		filename: 'js/[name].min.js',
+		filename: 'js/[name].js',
 		publicPath: '/'
 	},
 	module: {
 		rules: [
+			{
+				test: /\.m?js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: [
+							['@babel/preset-env', { targets: "> 0.25%, not dead" }]
+						]
+					}
+				}
+			},
 			{
 				test: /\.(scss|css)$/,
 				use: [
@@ -129,12 +139,7 @@ const config = {
 					noErrorOnMissing: true
 				},
 				{
-					from: `${srcFolder}/bundles/js`, to: `./libs`,
-					noErrorOnMissing: true,
-					force: true
-				},
-				{
-					from: `${srcFolder}/bundles/css`, to: `../css`,
+					from: `${srcFolder}/libs`, to: `./libs`,
 					noErrorOnMissing: true,
 					force: true
 				}

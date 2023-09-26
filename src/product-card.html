@@ -1,32 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{
-		"title":"Product Card",
-		"stylesheets":"<link rel='stylesheet' href='css/common.min.css'><link rel='stylesheet' href='css/product-card.min.css'>",
-		"scripts":""
+	@@include('htm/components/head.htm',{
+		"title":"Карточка продукта",
+		"stylesheets":"<link rel='stylesheet' href='libs/swiper-9.2.3/swiper-bundle.min.css'><link rel='stylesheet' href='libs/fancybox/fancybox.min.css'><link rel='stylesheet' href='css/common.min.css'><link rel='stylesheet' href='css/product-card.min.css'>",
+		"scripts":"<script defered src='libs/jquery-3.6.2.min.js'></script><script defered src='libs/fancybox/fancybox.umd.js'></script><script defered src='libs/swiper-9.2.3/swiper-bundle.min.js'></script><script src='js/product-card.min.js'></script>"
 	})
 	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{
-				"style":"header_right"
-			})
-			<div class="inner">
-				<main class="page">
-					<section class="section-slider swiper">
-						<div class="swiper-wrapper section-slider__wrapper">
-							<div class="swiper-slide page__gallery-area">
-								@@include('html/pages/product-card/_gallery.htm', {})
-							</div>
-							<div class="swiper-slide page__info-area">
-								@@include('html/pages/product-card/_content.htm', {})
-							</div>
-						</div>
-					</section>
-				</main>
-			</div>
-			@@include('html/_footer.htm',{"style":"footer_right","product-card":"active"})
-		</div>
-		@@include('html/pages/product-card/_drawers.htm',{})
-		@@include('html/pages/product-card/_js.htm',{})
+		@@include('htm/components/header.htm',{"className":"header_with-bg"})
+		@@include('htm/pages/product-card/main.htm',{"className":"page__main page__main_with-shift"})
+		@@include('htm/components/footer.htm',{"className":"page__footer"})
+		@@include('htm/components/shared-drawers.htm',{})
 	</body>
 </html>

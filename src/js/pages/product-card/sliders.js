@@ -1,123 +1,82 @@
+import { log, error, debug } from "../../../../repo/js/libs/logger.js";
 
-import Swiper, { Thumbs, Navigation } from 'swiper';
-import Mustache from "mustache";
-
-function initCatalogueSlider(thumbsSlider) {
-	new Swiper('.main-gallery__slider', {
-		modules: [Navigation, Thumbs],
+function initMainSlider(thumbsSlider) {
+	new Swiper("#product-card-slider", {
+		observer: true,
 		resizeObserver: true,
 		slidesPerView: 1,
-		spaceBetween: 0,
-		loop: true,
 		grabCursor: true,
+		loop: true,
+		autoplay: {
+			delay: 3000,
+		},
 		thumbs: {
 			swiper: thumbsSlider
-		},
-		navigation: {
-			nextEl: '.main-gallery__next-btn',
-			prevEl: '.main-gallery__prev-btn',
-		},
+		}
 	});
 }
-function initCatalogueThumbsSlider() {
-	return new Swiper('.main-gallery-thumbs__slider', {
-		modules: [Navigation, Thumbs],
+function initMainSliderThumbs() {
+	return new Swiper("#product-card-slider-thumbs", {
+		observer: true,
+		resizeObserver: true,
+		slidesPerView: 3,
+		spaceBetween: 20,
+		grabCursor: true,
+		navigation: {
+			prevEl: "#product-card-slider-thumbs-prev-btn",
+			nextEl: "#product-card-slider-thumbs-next-btn",
+		}
+	});
+}
+function initOptionsSlider(prefix) {
+	return new Swiper(`#${prefix}-options-slider`, {
 		observer: true,
 		resizeObserver: true,
 		slidesPerView: "auto",
-		spaceBetween: 10,
-		navigation: {
-			nextEl: '.main-gallery-thumbs__next-btn',
-			prevEl: '.main-gallery-thumbs__prev-btn',
+		spaceBetween: 20,
+		grabCursor: true,
+	});
+}
+function initProductsOverviewSlider(prefix) {
+	new Swiper(`#${prefix}-slider`, {
+		observer: true,
+		resizeObserver: true,
+		slidesPerView: 1,
+		spaceBetween: 60,
+		grabCursor: true,
+		loop: true,
+		autoplay: {
+			delay: 3000,
 		},
 		breakpoints: {
+			"575": {
+				slidesPerView: 2,
+			},
 			"768": {
-				spaceBetween: 20,
+				slidesPerView: 3,
+			},
+			"1120": {
+				slidesPerView: 4,
 			}
 		}
 	});
 }
-function initSamplesThumbs(category) {
-	const rootClass = `${category}-samples-thumbs-drawer`;
-	return new Swiper(`.${rootClass}__slider`, {
-		modules: [Thumbs],
-		observer: true,
+function initBreadcrumbsSlider() {
+	new Swiper(`#breadcrumbs-slider`, {
 		resizeObserver: true,
 		slidesPerView: "auto",
-		on: {
-			click: (swiper, event) => {
-				drawers.open(`${category}-samples-gallery`);
-			}
-		}
-	});
-}
-function initShapeSamplesSlider(rootClass, thumbsSlider, productSelectSlider) {
-	const productsSliderWrap = productSelectSlider.el.querySelector(`.swiper-wrapper`);
-	const productsSliderTemplate = `{{#products}}
-																		<a href="{{href}}" target="_blank" class="swiper-slide product-select__link">
-																			<span>{{title}}</span>
-																			<span>{{price}}</span>
-																		</a>
-																	{{/products}}`;
-	const setProductsList = (swiper) => {
-			const activeSlide = swiper.slides[swiper.realIndex];
-			const productsRawData = activeSlide.getAttribute("data-products");
-			try {
-				const productsData = { products: JSON.parse(productsRawData) };
-				const listRender = Mustache.render(productsSliderTemplate, productsData);
-				productsSliderWrap.innerHTML = listRender;
-			} catch (ex) {
-				console.log("Error mounting product data: ", ex);
-			}
-			productSelectSlider.slideTo(0, 1000, false);
-		};
-	new Swiper(`.${rootClass}__slider`, {
-		modules: [Thumbs, Navigation],
-		resizeObserver: true,
-		slidesPerView: 1,
-		spaceBetween: 0,
 		grabCursor: true,
-		loop: true,
-		navigation: {
-			prevEl: `.${rootClass}__prev-btn`,
-			nextEl: `.${rootClass}__next-btn`,
-		},
-		thumbs: {
-			swiper: thumbsSlider
-		},
-		on: {
-			"activeIndexChange": setProductsList,
-			"afterInit": setProductsList,
-		}
-	});
-}
-function initProductSelectSlider(rootClass) {
-	return new Swiper(`.${rootClass}__slider`, {
-		modules: [Navigation],
-		observer: true,
-		resizeObserver: true,
-		slidesPerView: "auto",
-		spaceBetween: 25,
-		centeredSlides: true,
-		navigation: {
-			prevEl: `.${rootClass}__prev-btn`,
-			nextEl: `.${rootClass}__next-btn`,
-		},
-		breakpoints: {
-			"720": {
-				spaceBetween: 50,
-			}
-		}
+		freeMode: true,
 	});
 }
 
-window.addEventListener("load", function (e) {
-	const catalogueThumsSlider = initCatalogueThumbsSlider();
-	initCatalogueSlider(catalogueThumsSlider);
-	const shapeSamplesThumbs = initSamplesThumbs("shape");
-	const shapeProductSelectSlider = initProductSelectSlider("shape-samples-product-select");
-	initShapeSamplesSlider("shape-samples-gallery-drawer", shapeSamplesThumbs, shapeProductSelectSlider);
-	const textureSamplesThumbs = initSamplesThumbs("texture");
-	const textureProductSelectSlider = initProductSelectSlider("texture-samples-product-select");
-	initShapeSamplesSlider("texture-samples-gallery-drawer", textureSamplesThumbs, textureProductSelectSlider);
-});
+export default function initSliders() {
+		log("init page sliders");
+	initMainSlider(initMainSliderThumbs());
+	initOptionsSlider("design");
+	initOptionsSlider("model");
+	initOptionsSlider("color");
+	initProductsOverviewSlider("consumables");
+	initProductsOverviewSlider("recomended");
+	initBreadcrumbsSlider();
+}

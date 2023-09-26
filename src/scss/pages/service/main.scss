@@ -1,0 +1,36 @@
+.service-request {
+	&__form-control {
+		display: inline-block;
+		padding: 8px 14px;
+		height: auto;
+		&_textarea {
+			resize: vertical;
+		}
+	}
+	&__form-check-input {
+		display: inline-block;
+		margin: 0!important;
+	}
+	&__agreement-check {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		> label {
+			margin-bottom: 0;
+		}
+	}
+}
+.form-label {
+	&_required:after {
+		display: inline-block;
+		content: "*";
+		color: #cc3300;
+		margin-left: 0.5em;
+	}
+}
+.bs-btn-outline-secondary {
+	border: 1px solid gray;
+	&:hover {
+		background-color: $--ultraLightBlue;
+	}
+}

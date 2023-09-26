@@ -1,0 +1,62 @@
+.typo-h-1 {
+	font-size: 60px;
+	line-height: 1.1;
+	font-weight: 700;
+	@media (max-width: $mbpSmallMobile) {
+		font-size: 40px;
+	}
+}
+.typo-h-2 {
+	font-size: 60px;
+	line-height: 1.1;
+	font-weight: 700;
+	@media (max-width: $mbpSmallMobile) {
+		font-size: 30px;
+	}
+}
+.typo-h-3 {
+	font-size: 30px;
+	line-height: 1.2;
+	font-weight: 700;
+}
+.typo-h-4 {
+	font-size: 24px;
+	line-height: 1.2;
+	font-weight: 700;
+}
+.typo-desc {
+	font-size: 24px;
+	line-height: 1.2;
+	font-weight: 300;
+}
+.typo-text {
+	font-size: 18px;
+	line-height: 1.4;
+	&_bold {
+		font-weight: 700;
+	}
+}
+.typo-link {
+	font-size: 18px;
+	line-height: 1.4;
+}
+.typo-tag {
+	font-size: 12px;
+	line-height: 1.1;
+	font-weight: 500;
+}
+.typo-menu-item {
+	font-size: 16px;
+	line-height: 1.1;
+	font-weight: 500;
+	@media (max-width: $mbpSmallMobile) {
+		font-size: 18px;
+	}
+}
+.typo-btn-cap {
+	font-size: 16px;
+	line-height: 1.4;
+	@media (max-width: $mbpSmallMobile) {
+		font-size: 18px;
+	}
+}

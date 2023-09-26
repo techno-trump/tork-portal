@@ -14,6 +14,7 @@ const paths = {
 let webPackConfigBeautify = Object.assign({}, webPackConfig);
 
 webPackConfigBeautify.optimization = {
+	minimize: true,
 	minimizer: [new TerserPlugin({
 		extractComments: false,
 		terserOptions: {
@@ -37,7 +38,7 @@ webPackConfigBeautify.optimization = {
 }
 
 export const jsDev = () => {
-	return app.gulp.src(app.path.src.js)
+	return app.gulp.src(".", { allowEmpty: true })
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
 				title: "JS",

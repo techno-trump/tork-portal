@@ -1,0 +1,68 @@
+<header class="header @@className">
+	<div class="header__container">
+		<div class="header__inner">
+			<a href="#" class="header__logo logo _main-logo">
+				<figure >
+					<svg viewbox="0 0 89 60">
+						<use xlink:href='img/sprites.svg#main-logo'></use>
+					</svg>
+					<figcaption aria-hidden="true">Main page</figcaption>
+				</figure>
+			</a>
+			<button type="button" class="header__menu-btn burger-btn" data-drawer-open="main-menu">
+				<span class="burger-btn__icon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+			<div class="header__main-menu-desctop-area" data-portal-src="main-nav-to-aside" data-portal-media="(max-width: 1050px)">
+				<div class="header-nav">
+					<div class="header-nav__mobile-header">
+						<a href="#" class="header-nav__logo logo _main-logo">
+							<figure>
+								<svg viewbox="0 0 89 60">
+									<use xlink:href='img/sprites.svg#main-logo'></use>
+								</svg>
+								<figcaption aria-hidden="true">Main page</figcaption>
+							</figure>
+						</a>
+						<button type="button" class="burger-btn header-nav__burger-btn" data-drawer-close="main-menu">
+							<span class="burger-btn__icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</button>
+					</div>
+					<div class="header-nav__main-menu-wrap">
+						<nav class="main-menu">
+							<ul class="main-menu__list">
+								<li class="main-menu__item">
+									<a href="./distributors.html" class="text-link text-link_upper-case typo-menu-item underline-in">Продукты</a>
+								</li>
+								<li class="main-menu__item">
+									<a href="./materials.html" class="text-link text-link_upper-case typo-menu-item underline-in">Маркетинговые материалы</a>
+								</li>
+								<li class="main-menu__item">
+									<a href="./catalogue.html" class="text-link text-link_upper-case typo-menu-item underline-in">Каталог</a>
+								</li>
+								<li class="main-menu__item">
+									<a href="./news.html" class="text-link text-link_upper-case typo-menu-item underline-in">Новости</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header-nav__find-distributor-wrap">
+						<a href="" class="text-link text-link_upper-case text-link_with-left-ico typo-menu-item">
+							<svg class="text-link__ico" viewbox="0 0 17.43 20">
+								<use xlink:href='@img/icons/icons.svg#map-pointer'></use>
+							</svg>
+							<span class="underline-in">Найти дистрибьютора</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

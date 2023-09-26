@@ -1,0 +1,33 @@
+.news-card {
+	display: flex;
+	flex-direction: column;
+	color: $--white;
+	&_dark {
+		color: $--mainBlack;
+	}
+	&__body {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+	}
+	&__img-wrap {
+		padding-top: 75%;
+		margin-bottom: var(--block-v-gap);
+	}
+	&__date {
+		margin-bottom: 10px;
+	}
+	&__title {
+		margin-bottom: var(--relatives-v-gap);
+		transition: color 0.3s;
+	}
+	&:hover &__title {
+		color: $--lightBlue200;
+	}
+	&_dark:hover &__title {
+		color: $--darkBlue;
+	}
+	&__text {
+		margin-bottom: var(--block-v-gap);
+	}
+}

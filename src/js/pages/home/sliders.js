@@ -1,113 +1,22 @@
-import { throttle } from "../../libs/throttle.js";
-import Swiper, { Pagination, Autoplay, Scrollbar, Navigation, Manipulation, Mousewheel } from 'swiper';
+import { log, error, debug } from "../../../../repo/js/libs/logger.js";
 
-const scrollControllStack = new Map();
-const disableManipulations = (swiper) => {
-		console.log("disableManipulations");
-	swiper.mousewheel.disable();
-	swiper.allowTouchMove = false;
-};
-const enableManipulations = (swiper) => {
-		console.log("enableManipulations");
-	swiper.mousewheel.enable();
-	swiper.allowTouchMove = true;
-};
-window.addEventListener("resize", throttle(() => {
-	for (const [swiper, context] of scrollControllStack) {
-		const { container, listener } = context;
-		const hasVerticalScrollbar = container.scrollHeight > container.clientHeight;
-			console.log("hasVerticalScrollbar", hasVerticalScrollbar);
-		if (hasVerticalScrollbar) {	
-			if (!listener) {
-				context.listener = (event) => {
-					// On edges
-						console.log(container.scrollTop, container.scrollHeight, container.clientHeight);
-					if (container.scrollTop <= 0  || container.scrollTop >= (container.scrollHeight - container.clientHeight)) {
-						enableManipulations(swiper);
-					}
-				}
-				container.addEventListener("scroll", context.listener);
-				disableManipulations(swiper);
-			}
-		} else if (listener) {
-			container.removeEventListener("scroll", listener);
-			context.listener = null;
-			enableManipulations(swiper);
-		}
-	}
-}), 50);
-
-const allowScroll = (swiper, container) => {
-	disableManipulations(swiper);
-	//scrollControllStack.set(swiper, { container });
-};
-
-// Инициализация слайдеров
-function initCatalogueSlider() {
-	// Перечень слайдеров
-	// Проверяем, есть ли слайдер на стронице
-	new Swiper('.main-gallery__slider', { // Указываем скласс нужного слайдера
-		// Подключаем модули слайдера
-		// для конкретного случая
-		resizeObserver: true,
-		modules: [Autoplay, Navigation, Scrollbar, Pagination],
-		slidesPerView: 1,
-		spaceBetween: 0,
-		loop: true,
-		autoplay: {
-			delay: 3000,
-			pauseOnMouseEnter: true,
-		},
-		navigation: {
-			nextEl: '.main-gallery__next-btn',
-			prevEl: '.main-gallery__prev-btn',
-		},
-		pagination: {
-			el: '.main-gallery__paggination',
-    	type: 'bullets',
-			clickable: true,
-		},
-		// Брейкпоинты
-		breakpoints: {
-		},
-	});
-}
-// Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
-function initSectionsSliders() {
-	const sectionsSlider = new Swiper(".section-slider", {
-		modules: [Mousewheel],
+function initWelcomeSliders() {
+		log("initWelcomeSliders");
+	const sectionsSlider = new Swiper("#welcome-slider", {
 		observer: true,
 		resizeObserver: true,
-		observeParents: true,
 		slidesPerView: 1,
-		direction: "vertical",
-		mousewheel: true,
-		//allowTouchMove: false,
-		//touchStartPreventDefault: true,
-		breakpoints: {
-			993: {
-				slidesPerView: 2,
-				direction: "horizontal",
-			},
+		grabCursor: true,
+		autoplay: {
+			delay: 3000,
 		},
+		pagination: {
+			el: "#welcome-slider-pagination",
+			clickable: true,
+		}
 	});
-	//const mainContainerElem = document.querySelector(".inner");
-	//allowScroll(sectionsSlider, mainContainerElem);
 }
-// function passProductsSliderHeightToContainer() {
-// 	const sliderContainerElem = document.querySelector(".popular-products-slider");
-// 	const sliderElem = document.querySelector(".popular-products-slider__swiper");
-// 	const setParentHeight = _.debounce(() => {
-// 		sliderContainerElem.style.height = `${sliderElem.offsetHeight}px`;
-// 	}, 300);
-// 	const observer = new ResizeObserver((entries) => {
-// 		if (!entries.length) return;
-// 		setParentHeight();
-// 	});
-// 	observer.observe(sliderElem);
-// }
 
-window.addEventListener("load", function (e) {
-	initSectionsSliders();
-	initCatalogueSlider();
-});
+export default function initSliders() {
+	initWelcomeSliders();
+}

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Продукты в категории</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel='stylesheet' href='libs/swiper-9.2.3/swiper-bundle.min.css?_v=20230926154215'>
+	<link rel='stylesheet' href='css/common.min.css?_v=20230926154215'>
+	<link rel='stylesheet' href='css/products-in-category.min.css?_v=20230926154215'>
+	<!-- <link rel="stylesheet" href="css/swiper-bundle.min.css?_v=20230926154215"> -->
+
+	<!-- Libs and Common scripts -->
+	<script defered src='libs/tua-bsl.umd.js?_v=20230926154215'></script>
+	<script defered src='js/common.min.js?_v=20230926154215'></script>
+
+	<!-- Page scripts -->
+	<script defered src='libs/swiper-9.2.3/swiper-bundle.min.js?_v=20230926154215'></script>
+	<script src='js/products-in-category.min.js?_v=20230926154215'></script>
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Golos+Text:500);
+		@import url(https://fonts.googleapis.com/css?family=Inter:regular,500,600);
+	</style>
+	<!-- <script>
+		window.onerror = function(message, url, line, col, errorObj) {
+			console.log(`${message}\n${url}, ${line}:${col}`, errorObj);
+		};
+	</script> -->
+</head>
+
+<body>
+	<header class="header header_with-bg">
+		<div class="header__container">
+			<div class="header__inner">
+				<a href="#" class="header__logo logo _main-logo">
+					<figure>
+						<svg viewbox="0 0 89 60">
+							<use xlink:href='img/sprites.svg#main-logo'></use>
+						</svg>
+						<figcaption aria-hidden="true">Main page</figcaption>
+					</figure>
+				</a>
+				<button type="button" class="header__menu-btn burger-btn" data-drawer-open="main-menu">
+					<span class="burger-btn__icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</button>
+				<div class="header__main-menu-desctop-area" data-portal-src="main-nav-to-aside" data-portal-media="(max-width: 1050px)">
+					<div class="header-nav">
+						<div class="header-nav__mobile-header">
+							<a href="#" class="header-nav__logo logo _main-logo">
+								<figure>
+									<svg viewbox="0 0 89 60">
+										<use xlink:href='img/sprites.svg#main-logo'></use>
+									</svg>
+									<figcaption aria-hidden="true">Main page</figcaption>
+								</figure>
+							</a>
+							<button type="button" class="burger-btn header-nav__burger-btn" data-drawer-close="main-menu">
+								<span class="burger-btn__icon">
+									<span></span>
+									<span></span>
+									<span></span>
+								</span>
+							</button>
+						</div>
+						<div class="header-nav__main-menu-wrap">
+							<nav class="main-menu">
+								<ul class="main-menu__list">
+									<li class="main-menu__item">
+										<a href="./distributors.html" class="text-link text-link_upper-case typo-menu-item underline-in">Продукты</a>
+									</li>
+									<li class="main-menu__item">
+										<a href="./materials.html" class="text-link text-link_upper-case typo-menu-item underline-in">Маркетинговые материалы</a>
+									</li>
+									<li class="main-menu__item">
+										<a href="./catalogue.html" class="text-link text-link_upper-case typo-menu-item underline-in">Каталог</a>
+									</li>
+									<li class="main-menu__item">
+										<a href="./news.html" class="text-link text-link_upper-case typo-menu-item underline-in">Новости</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="header-nav__find-distributor-wrap">
+							<a href="" class="text-link text-link_upper-case text-link_with-left-ico typo-menu-item">
+								<svg class="text-link__ico" viewbox="0 0 17.43 20">
+									<use xlink:href='img/icons/icons.svg#map-pointer'></use>
+								</svg>
+								<span class="underline-in">Найти дистрибьютора</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main class="page__main page__main_with-shift">
+		<!-- Sections -->
+		<section class="page--welcome relative color-white">
+			<div class="backgroung-img backgroung-img_center">
+				<img src="img/product-categories/paper/hero-01@1x.jpg" loading="lazy" srcset="img/product-categories/paper/hero-01@0.75x.jpg, img/product-categories/paper/hero-01@1x.jpg 1x, img/product-categories/paper/hero-01@2x.jpg 2x" sizes="100%" alt="hero">
+			</div>
+			<div class="section-container">
+				<section class="mb-20">
+					<div class="section-container p-y-relatives">
+						<div id="breadcrumbs-slider" class="slider swiper">
+							<div class="wrapper swiper-wrapper">
+								<nav class="swiper-slide breadcrumbs breadcrumbs_bright typo-tag color-white">
+									<p>
+										<a href="/">TORK</a>
+										<a href="/">Продукты Tork</a>
+										<a>Туалетная бумага</a>
+									</p>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</section>
+				<h1 class="typo-h-1">Туалетная бумага</h1>
+			</div>
+		</section>
+		<section class="bg-color-ultra-light-blue">
+			<div class="section-container main-section-padding">
+				<div class="product-in-category--main-grid">
+					<form name="filters" class="product-in-category--filters">
+						<div class="filters-group">
+							<h3 class="typo-h-3 color-dark-blue mb-20">Продукты</h3>
+							<ul class="filters-group__list typo-text">
+								<li>
+									<label class="radio-button radio-button">
+										<input type="radio" name="products" value="all" checked>
+										<span class="radio-button__body radio-button__body_simple-input typo-btn-cap"></span>
+										<span class="radio-button__label">Все продукты категории</span>
+									</label>
+								</li>
+								<li>
+									<label class="radio-button radio-button">
+										<input type="radio" name="products" value="dispensors">
+										<span class="radio-button__body radio-button__body_simple-input typo-btn-cap"></span>
+										<span class="radio-button__label">Диспенсеры</span>
+									</label>
+								<li>
+									<label class="radio-button radio-button">
+										<input type="radio" name="products" value="consumables">
+										<span class="radio-button__body radio-button__body_simple-input typo-btn-cap"></span>
+										<span class="radio-button__label">Расходные материалы</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+						<div class="filters-group">
+							<h3 class="typo-h-3 color-dark-blue mb-20">Система</h3>
+							<ul class="filters-group__list typo-text">
+								<li>
+									<label class="radio-button radio-button">
+										<input type="radio" name="system" value="all" checked>
+										<span class="radio-button__body radio-button__body_simple-input typo-btn-cap"></span>
+										<span class="radio-button__label">Все системы</span>
+									</label>
+								</li>
+								<li>
+									<label class="radio-button radio-button">
+										<input type="radio" name="system" value="s-1">
+										<span class="radio-button__body radio-button__body_simple-input typo-btn-cap"></span>
+										<span class="radio-button__label">S1</span>
+									</label>
+								</li>
+								<li>
+									<label class="radio-button radio-button">
+										<input type="radio" name="system" value="s-2">
+										<span class="radio-button__body radio-button__body_simple-input typo-btn-cap"></span>
+										<span class="radio-button__label">S2</span>
+									</label>
+								</li>
+								<li>
+									<label class="radio-button radio-button">
+										<input type="radio" name="system" value="s-3">
+										<span class="radio-button__body radio-button__body_simple-input typo-btn-cap"></span>
+										<span class="radio-button__label">S3</span>
+									</label>
+								</li>
+								<li>
+									<label class="radio-button radio-button">
+										<input type="radio" name="system" value="s-11">
+										<span class="radio-button__body radio-button__body_simple-input typo-btn-cap"></span>
+										<span class="radio-button__label">S11</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</form>
+					<div class="product-in-category--list-grid">
+						<div class="products-list-card">
+							<a href="#" class="img-wrap img-wrap_zoom-on-hover products-list-card__img-wrap">
+								<img src="img/product-card/smart-one/01@2x.jpg" alt="smart-one/01@2x.jpg" loading="lazy">
+							</a>
+							<h4 class="typo-h-4 color-dark-blue products-list-card__title">Tork SmartOne® диспенсер для туалетной бумаги в рулонах</h4>
+							<div class="flex-row space-between items-center mb-20">
+								<span class="typo-tag">680008</span>
+								<a href="#" class="inner-link typo-link m-y-neg-10">
+									<svg class="inner-link__icon" viewbox="0 0 18 20">
+										<use xlink:href='img/icons/icons.svg#pdf-doc'></use>
+									</svg>
+									<span class="inner-link__cap typo-tag mr-15">Скачать</span>
+								</a>
+							</div>
+							<div class="card-bottom border-top-dark">
+								<a href="/distributors.html" class="text-btn text-btn_dark" data-finalize-animation="parity">
+									<span class="text-btn__cap typo-text">Подробнее</span>
+									<span class="text-btn__icon">
+										<svg viewbox="0 0 17 16">
+											<use xlink:href='img/icons/icons.svg#btn-arrow-right'></use>
+										</svg>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="products-list-card">
+							<a href="#" class="img-wrap img-wrap_zoom-on-hover products-list-card__img-wrap">
+								<img src="img/product-card/dispensor-01/01@2x.jpg" alt="dispensor-01/01@2x.jpg" loading="lazy">
+							</a>
+							<h4 class="typo-h-4 color-dark-blue products-list-card__title">Tork SmartOne® диспенсер для туалетной бумаги в рулонах</h4>
+							<div class="flex-row space-between items-center mb-20">
+								<span class="typo-tag">460006</span>
+								<a href="#" class="inner-link typo-link m-y-neg-10">
+									<svg class="inner-link__icon" viewbox="0 0 18 20">
+										<use xlink:href='img/icons/icons.svg#pdf-doc'></use>
+									</svg>
+									<span class="inner-link__cap typo-tag mr-15">Скачать</span>
+								</a>
+							</div>
+							<div class="card-bottom border-top-dark">
+								<a href="/distributors.html" class="text-btn text-btn_dark" data-finalize-animation="parity">
+									<span class="text-btn__cap typo-text">Подробнее</span>
+									<span class="text-btn__icon">
+										<svg viewbox="0 0 17 16">
+											<use xlink:href='img/icons/icons.svg#btn-arrow-right'></use>
+										</svg>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="products-list-card">
+							<a href="#" class="img-wrap img-wrap_zoom-on-hover products-list-card__img-wrap">
+								<img src="img/product-card/double-dispensore/01@2x.jpg" alt="double-dispensore/01@2x.jpg" loading="lazy">
+							</a>
+							<h4 class="typo-h-4 color-dark-blue products-list-card__title">Tork SmartOne® диспенсер для туалетной бумаги в рулонах</h4>
+							<div class="flex-row space-between items-center mb-20">
+								<span class="typo-tag">682000</span>
+								<a href="#" class="inner-link typo-link m-y-neg-10">
+									<svg class="inner-link__icon" viewbox="0 0 18 20">
+										<use xlink:href='img/icons/icons.svg#pdf-doc'></use>
+									</svg>
+									<span class="inner-link__cap typo-tag mr-15">Скачать</span>
+								</a>
+							</div>
+							<div class="card-bottom border-top-dark">
+								<a href="/distributors.html" class="text-btn text-btn_dark" data-finalize-animation="parity">
+									<span class="text-btn__cap typo-text">Подробнее</span>
+									<span class="text-btn__icon">
+										<svg viewbox="0 0 17 16">
+											<use xlink:href='img/icons/icons.svg#btn-arrow-right'></use>
+										</svg>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="products-list-card">
+							<a href="#" class="img-wrap img-wrap_zoom-on-hover products-list-card__img-wrap">
+								<img src="img/product-card/dispensor-02/01@2x.jpg" alt="dispensor-02/01@2x.jpg" loading="lazy">
+							</a>
+							<h4 class="typo-h-4 color-dark-blue products-list-card__title">Tork SmartOne® диспенсер для туалетной бумаги в рулонах</h4>
+							<div class="flex-row space-between items-center mb-20">
+								<span class="typo-tag">555000</span>
+								<a href="#" class="inner-link typo-link m-y-neg-10">
+									<svg class="inner-link__icon" viewbox="0 0 18 20">
+										<use xlink:href='img/icons/icons.svg#pdf-doc'></use>
+									</svg>
+									<span class="inner-link__cap typo-tag mr-15">Скачать</span>
+								</a>
+							</div>
+							<div class="card-bottom border-top-dark">
+								<a href="/distributors.html" class="text-btn text-btn_dark" data-finalize-animation="parity">
+									<span class="text-btn__cap typo-text">Подробнее</span>
+									<span class="text-btn__icon">
+										<svg viewbox="0 0 17 16">
+											<use xlink:href='img/icons/icons.svg#btn-arrow-right'></use>
+										</svg>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="products-list-card">
+							<a href="#" class="img-wrap img-wrap_zoom-on-hover products-list-card__img-wrap">
+								<img src="img/product-card/dispensor-02/01@2x.jpg" alt="dispensor-02/01@2x.jpg" loading="lazy">
+							</a>
+							<h4 class="typo-h-4 color-dark-blue products-list-card__title">Tork SmartOne® диспенсер для туалетной бумаги в рулонах</h4>
+							<div class="flex-row space-between items-center mb-20">
+								<span class="typo-tag">555000</span>
+								<a href="#" class="inner-link typo-link m-y-neg-10">
+									<svg class="inner-link__icon" viewbox="0 0 18 20">
+										<use xlink:href='img/icons/icons.svg#pdf-doc'></use>
+									</svg>
+									<span class="inner-link__cap typo-tag mr-15">Скачать</span>
+								</a>
+							</div>
+							<div class="card-bottom border-top-dark">
+								<a href="/distributors.html" class="text-btn text-btn_dark" data-finalize-animation="parity">
+									<span class="text-btn__cap typo-text">Подробнее</span>
+									<span class="text-btn__icon">
+										<svg viewbox="0 0 17 16">
+											<use xlink:href='img/icons/icons.svg#btn-arrow-right'></use>
+										</svg>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="products-list-card">
+							<a href="#" class="img-wrap img-wrap_zoom-on-hover products-list-card__img-wrap">
+								<img src="img/product-card/dispensor-02/01@2x.jpg" alt="dispensor-02/01@2x.jpg" loading="lazy">
+							</a>
+							<h4 class="typo-h-4 color-dark-blue products-list-card__title">Tork SmartOne® диспенсер для туалетной бумаги в рулонах</h4>
+							<div class="flex-row space-between items-center mb-20">
+								<span class="typo-tag">555000</span>
+								<a href="#" class="inner-link typo-link m-y-neg-10">
+									<svg class="inner-link__icon" viewbox="0 0 18 20">
+										<use xlink:href='img/icons/icons.svg#pdf-doc'></use>
+									</svg>
+									<span class="inner-link__cap typo-tag mr-15">Скачать</span>
+								</a>
+							</div>
+							<div class="card-bottom border-top-dark">
+								<a href="/distributors.html" class="text-btn text-btn_dark" data-finalize-animation="parity">
+									<span class="text-btn__cap typo-text">Подробнее</span>
+									<span class="text-btn__icon">
+										<svg viewbox="0 0 17 16">
+											<use xlink:href='img/icons/icons.svg#btn-arrow-right'></use>
+										</svg>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+		</section>
+	</main>
+
+
+
+	<footer class="footer " itemscope itemtype="http://schema.org/WPFooter">
+		<div class="footer__container">
+			<div class="footer__inner">
+				<div class="footer__body">
+					<div class="footer__logo-wrap">
+						<a href="#" class="logo footer__logo">
+							<figure>
+								<svg viewbox="0 0 163 38">
+									<use xlink:href='img/sprites.svg#essity-logo'></use>
+								</svg>
+								<figcaption aria-hidden="true">Main page</figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="footer__company-info">
+						<div class="company-info typo-text" itemscope itemtype="http://schema.org/Organization">
+							<div class="company-info__name typo-h-4" itemprop="name">ООО «Эссити»</div>
+							<div class="company-info__requisites">
+								<div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+									<span itemprop="addressCountry">Россия</span>,
+									<span itemprop="addressLocality">Москва</span>,
+									<span itemprop="streetAddress">ул. Кржижановского, д.14, к.3</span>
+								</div>
+								<a class="text-link underline-in" href="mailto:reception.moscow@essity.com" itemprop="email">reception.moscow@essity.com</a>
+								<a class="text-link underline-in requisite" href="tel:+74959673367">
+									<dl>
+										<dt>Тел.: </dt>
+										<dd itemprop="telephone">+7&nbsp;495&nbsp;967&nbsp;33&nbsp;67</dd>
+									</dl>
+								</a>
+								<a class="text-link underline-in requisite" href="tel:+74959673368">
+									<dl>
+										<dt>Факс.: </dt>
+										<dd itemprop="faxNumber">+7&nbsp;495&nbsp;967&nbsp;33&nbsp;68</dd>
+									</dl>
+								</a>
+							</div>
+						</div>
+					</div>
+					<nav class="footer__nav typo-text">
+						<ul class="footer__nav-list">
+							<li class="footer__nav-item"><a href="./products.html" class="text-link underline-in">Продукты</a></li>
+							<li class="footer__nav-item"><a href="./material.html" class="text-link underline-in">Маркетинговые материалы</a></li>
+							<li class="footer__nav-item"><a href="./news.html" class="text-link underline-in">Новости</a></li>
+							<li class="footer__nav-item"><a href="./policy.html" class="text-link underline-in">Политика конфиденциальности</a></li>
+							<li class="footer__nav-item"><a href="./rules.html" class="text-link underline-in">Правила использования</a></li>
+							<li class="footer__nav-item"><a href="./cookie-policy.html" class="text-link underline-in">Информация по куки-файлам</a></li>
+							<li class="footer__nav-item"><a href="./service.html" class="text-link underline-in">Сервисная служба</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="footer__bottom">
+					<div class="footer__copyright typo-text">
+						<meta itemprop="copyrightYear" content="2023">
+						<meta itemprop="copyrightHolder" content="Essity Hygiene and Health AB">
+						<div>© 2023 Essity Hygiene and Health AB</div>
+					</div>
+					<div class="footer__tag typo-tag">
+						Компания Essity является одним из мировых лидеров в области товаров для гигиены и здоровья, которая разрабатывает, производит и продает средства личной гигиены (продукция детской гигиены, женской гигиены, товары для ухода при недержании и медицинские решения), а также потребительскую бумажную продукцию и бумажную продукцию и услуги для профессиональной гигиены. В России компания представлена продукцией торговых марок Tork, Zewa, Libero, Libresse и TENA. С более подробной информацией можно ознакомиться на сайте: www.essity.ru
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div class="drawer drawer_overlapping drawer_right" data-drawer="main-menu">
+		<div class="drawer__panel">
+			<div class="drawer__inner" data-portal-dest="main-nav-to-aside">
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

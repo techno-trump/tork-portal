@@ -1,0 +1,256 @@
+.drawer {
+	position: fixed;
+	left: 0;
+	top: 0;
+	transition: opacity ease-out 0.3s, visibility ease-out 0.3s, transform ease-out 0.3s, background-color 0.3s;
+	visibility: hidden;
+	&.open {
+		visibility: visible;
+	}
+	&_overlapping, &_static {
+		height: 100%;
+		width: 100%;
+	}
+	&_full-width, &_modal {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&_left, &_right {
+		display: flex;
+		height: 100%;
+	}
+	&_right {
+		justify-content: flex-end;
+	}
+	&_overlapping.upper-overlapping, &_static.upper-overlapping {
+		background-color: rgba(0, 0, 0, 0.0);
+	}
+	&_overlapping.upper-overlapping.open, &_static.upper-overlapping.open {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	&__panel {
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	&_modal &__panel {
+		display: table;
+		max-width: 750px;
+		min-height: rem(700);
+		width: 100%;
+		@media (min-width: ($mbpDesign + 0.1px)) {
+			max-width: rem(750);
+		}
+		@media (max-width: 720px) {
+			max-width: 100%;
+		}
+	}
+	&_narrow &__panel {
+		max-width: 550px;
+		@media (min-width: ($mbpDesign + 0.1px)) {
+			max-width: rem(550);
+		}
+		@media (max-width: 580px) {
+			max-width: 100%;
+		}
+	}
+	&_full-width &__panel, &_modal &__panel {
+		margin: auto;
+	}
+	&_left &__panel, &_right &__panel {
+		display: table;
+		min-height: 100%;
+		width: rem(545);
+		@media (max-width: $mbpMobile) {
+			width: 445px;
+		}
+		@media (max-width: 500px) {
+			width: 100%;
+		}
+	}
+	&_left &__panel {
+		
+		
+	}
+	&_right &__panel {
+		
+	}
+	&_full-width &__panel {
+		width: 100%;
+		max-width: 100%;
+		overflow-y: hidden;
+	}
+	&__inner {
+		position: relative;
+		max-width: 100%;
+		background-color: $--white;
+		transition: left 0.3s, right 0.3s, top 0.3s, transform 0.3s, opacity 0.3s;
+		&_spaced {
+			padding: 0 rem(30);
+			@media (max-width: $mbpMobile) {
+				padding: 0 rem(15);
+			}
+			@media (max-width: $mbpSmallMobile) {
+				padding: 0 rem(10);
+			}
+		}
+	}
+	&_modal &__inner {
+		display: table-cell;
+		padding: 0 rem(60) rem(70);
+		@media (max-width: $mbpMobile) {
+			padding: 0 30px 39px;
+		}
+		@media (max-width: $mbpSmallMobile) {
+			padding: 0 10px 39px;
+		}
+	}
+	&_modal &__title {
+		font-size: rem(40);
+		font-weight: 300;
+		line-height: rem(40);
+		margin-top: rem(50);
+		text-transform: none;
+		@media (max-width: $mbpMobile) {
+			font-size: 32px;
+			line-height: 43px;
+			margin-top: 42px;
+		}
+	}
+	&_right &_title, &_left &_title {
+		text-transform: uppercase;
+	}
+	&_left &__inner, &_right &__inner {
+		display: table-cell;
+		min-height: 100%;
+		width: 100%;
+	}
+	&_left &__inner {
+		left: -100%;
+		right: auto;
+	}
+	&_left.open &__inner {
+		left: 0;
+	}
+	&_right &__inner {
+		right: -100%;
+		left: auto;
+	}
+	&_right.open &__inner {
+		right: 0;
+	}
+	&_modal &__inner, &_full-width &__inner, &_top &__inner, &_center &__inner {
+		top: 0;
+		bottom: auto;
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	&_modal.open &__inner, &_full-width.open &__inner, &_top.open &__inner, &_center.open &__inner {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	&__header-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 15px;
+		font-weight: 700;
+		line-height: 20px;
+		padding: rem(30) 0 rem(24);
+		text-transform: uppercase;
+		@media (max-width: $mbpMobile) {
+			padding: 22px 0;
+		}
+	}
+	&__header_separated > &__header-inner {
+		border-bottom: rem(1) solid $--semiGray;
+	}
+	&__close-btn {
+		position: relative;
+		display: inline-block;
+		min-width: rem(30);
+		min-height: rem(30);
+		&_with-round-bg {
+			min-width: rem(65);
+			min-height: rem(65);
+			background-color: rgba($color: $--white, $alpha: 0.8);
+			border-radius: 50%;
+			box-shadow: 0px rem(2) rem(12) rgba(35, 0, 0, 0.1);
+			@media screen and (min-width: $mbpMinWidth) and (max-width: $mbpTablet) {
+				min-width: aval(32, 65, 0, $minWidth, $mbpTabletNu);
+				min-height: aval(32, 65, 0, $minWidth, $mbpTabletNu);
+			}
+			@media screen and (max-width: $mbpSmallMobile) {
+				min-width: 35px;
+				min-height: 35px;
+			}
+		}
+		&:before {
+			content: "";
+			display: block;
+			width: rem(20);
+			height: 1px;
+			background: #000000;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			margin: auto;
+			transform: rotate(45deg);
+			transition: transform 0.3s;
+		}
+		&:after {
+			content: "";
+			display: block;
+			width: rem(20);
+			height: 1px;
+			background: #000000;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			margin: auto;
+			transform: rotate(-45deg);
+			transition: transform 0.3s;
+		}
+		&:hover::before {
+			transform: rotate(135deg);
+		}
+		&:hover::after {
+			transform: rotate(45deg);
+		}
+	}
+	&_modal &__close-btn {
+		align-self: start;
+		min-width: rem(56);
+		min-height: rem(56);
+		background-color: rgba($color: $--white, $alpha: 0.8);
+		border: rem(1) solid $--gray;
+		border-radius: 50%;
+		margin-right: rem(-28);
+		@media (max-width: $mbpMobile) {
+			min-width: rem(30);
+			min-height: rem(30);
+			border-radius: 0;
+			border-color: transparent;
+			margin-right: 0;
+		}
+		// @media screen and (min-width: $mbpMinWidth) and (max-width: $mbpTablet) {
+		// 	min-width: aval(32, 65, 0, $minWidth, $mbpTabletNu);
+		// 	min-height: aval(32, 65, 0, $minWidth, $mbpTabletNu);
+		// }
+		// @media screen and (max-width: $mbpSmallMobile) {
+		// 	min-width: 35px;
+		// 	min-height: 35px;
+		// }
+		@media (max-width: $mbpSmallMobile) {
+			margin-right: 0;
+		}
+	}
+	&__body {
+		padding: rem(25) 0;
+	}
+}

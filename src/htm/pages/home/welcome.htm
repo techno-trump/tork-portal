@@ -1,0 +1,39 @@
+<section class="welcome">
+	<div id="welcome-slider" class="swiper welcome__slider">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide welcome__slide">
+				<div class="welcome__bg backgroung-img">
+					<img src="@img/home/hero-01@1x.jpg" loading="lazy"
+						srcset="@img/home/hero-01@0.75x.jpg 0.75x @img/home/hero-01@1x.jpg 1x @img/home/hero-01@2x.jpg 2x"
+						sizes="100%"
+						alt="hero"
+						>
+				</div>
+				<div class="welcome__container">
+					<div class="welcome__inner">
+						<div class="welcome__body">
+							<!-- Заменить на h2 после перехода на слайдер -->
+							<h1 class="typo-h-1 welcome__title">Повысьте уровень<br>гигиены рук</h1>
+							<h3 class="typo-h-3 welcome__sub-title">с Tork PeakServe</h3>
+						</div>
+						<div class="welcome__bottom card-bottom border-top-bright">
+							<a href="#" class="text-btn text-btn_bright" data-finalize-animation="parity">
+								<span class="text-btn__cap typo-text">Узнать подробнее</span>
+								<span class="text-btn__icon">
+									<svg viewbox="0 0 17 16">
+										<use xlink:href='@img/icons/icons.svg#btn-arrow-right'></use>
+									</svg>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="welcome__overlay">
+		<div class="welcome__container welcome__slider-pagination-wrap">
+			<div id="welcome-slider-pagination" class="welcome-slider-pagination welcome__slider-pagination"></div>
+		</div>
+	</div>
+</section>

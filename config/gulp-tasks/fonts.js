@@ -20,7 +20,7 @@ export const otfToTtf = () => {
 }
 export const ttfToWoff = () => {
 	// Ищем файлы шрифтов .ttf
-	return app.gulp.src(`${app.path.srcFolder}/fonts/*.ttf`, {})
+	return app.gulp.src(`${app.path.srcFolder}/fonts/**/*.ttf`, {})
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
 				title: "FONTS",
@@ -45,7 +45,7 @@ export const ttfToWoff = () => {
 		.pipe(app.gulp.dest(`${app.path.build.fonts}`));
 }
 export const fonstStyle = () => {
-	let fontsFile = `${app.path.srcFolder}/scss/fonts/fonts.scss`;
+	let fontsFile = `${app.path.srcFolder}/fonts/index.scss`;
 	// Если передан флаг --rewrite удаляем файл подключения шрифтов
 	app.isFontsReW ? fs.unlink(fontsFile, cb) : null;
 	// Проверяем существуют ли файлы шрифтов

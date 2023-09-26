@@ -1,0 +1,18 @@
+.products-list-card {
+	display: flex;
+	flex-direction: column;
+	background-color: $--white;
+	padding: 0 20px 20px;
+	transition: background-color 0.3s;
+	&:hover {
+		background-color: transparent;
+	}
+	&__img-wrap {
+		padding-top: 100%;
+		margin-bottom: 20px;
+	}
+	&__title {
+		flex: 1 1 auto;
+		margin-bottom: 40px;
+	}
+}

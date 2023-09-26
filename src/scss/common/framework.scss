@@ -1,0 +1,146 @@
+// Все, что не описывает хотя бы в минимальный отдельный компонент
+.fw-500 {
+	font-weight: 500;
+}
+.color-main-black {
+	color: $--mainBlack;
+}
+.color-dark-blue {
+	color: $--darkBlue;
+}
+.color-white {
+	color: $--white;
+}
+.bg-color-dark-blue {
+	background-color: $--darkBlue;
+}
+.bg-color-ultra-light-blue {
+	background-color: $--ultraLightBlue;
+}
+.p-t-80 {
+	padding-top: 80px;
+}
+.p-b-20 {
+	padding-bottom: 20px;
+}
+.p-b-40 {
+	padding-bottom: 20px;
+}
+.p-b-260 {
+	padding-bottom: 260px;
+}
+.p-y-relatives {
+	padding-top: var(--relatives-v-gap);
+	padding-bottom: var(--relatives-v-gap);
+}
+.mb-10 {
+	margin-bottom: 10px;
+}
+.mb-20 {
+	margin-bottom: 20px;
+}
+.mb-30 {
+	margin-bottom: 30px;
+}
+.mb-40 {
+	margin-bottom: 40px;
+}
+.mb-60 {
+	margin-bottom: 60px;
+}
+.mb-80 {
+	margin-bottom: 80px;
+}
+
+.mr-15 {
+	margin-right: 15px;
+}
+.ml-10 {
+	margin-left: 10px;
+}
+.m-b-v-space-xl {
+	margin-bottom: var(--section-p-y);
+}
+.m-y-neg-10 {
+	margin-top: -10px;
+	margin-bottom: -10px;
+}
+
+.main-section-padding {
+	padding-top: var(--section-p-y);
+	padding-bottom: var(--section-p-y);
+}
+.main-section-padding-bottom {
+	padding-bottom: var(--section-p-y);
+}
+
+.col-span-2 {
+	grid-column: auto/span 2;
+}
+
+
+.flex-row {
+	display: flex;
+}
+.flex-auto {
+	flex: 1 1 auto;
+}
+.justify-flex-end {
+	justify-content: flex-end;
+}
+.space-between {
+	justify-content: space-between;
+}
+.items-center {
+	align-items: center;
+}
+
+.relative {
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 0;
+}
+
+.max-width-1100 {
+	max-width: 1100px;
+}
+.min-height-400 {
+	min-height: 400px;
+}
+@media (max-width: $mbpLargePc) {
+	.lpc-hidden {
+		display: none;
+	}
+}
+@media (max-width: $mbpPc) {
+	.pc-mb-40 {
+		margin-bottom: 40px;
+	}
+	.pc-mb-60 {
+		margin-bottom: 60px;
+	}
+	.pc-hidden {
+		display: none;
+	}
+}
+@media (max-width: $mbpSmallMobile) {
+	.smob-mb-20 {
+		margin-bottom: 20px;
+	}
+	.smob-mb-60 {
+		margin-bottom: 60px;
+	}
+	.smob-mb-80 {
+		margin-bottom: 80px;
+	}
+
+	.smob-min-height-240 {
+		min-height: 240px;
+	}
+}
+@media (min-width: ($mbpLargePc + 0.1px)) {
+	.mt-lpc-hidden {
+		display: none;
+	}
+}

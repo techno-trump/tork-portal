@@ -1,0 +1,12 @@
+.accordeon {
+	&__item-header {
+		display: flex;
+		justify-content: space-between;
+		cursor: pointer;
+	}
+	&__item-body {
+		height: 0;
+		overflow: hidden;
+		transition: height 0.3s;
+	}
+}

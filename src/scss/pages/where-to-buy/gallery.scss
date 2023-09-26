@@ -1,9 +1,0 @@
-.main-gallery {
-	&__slide {
-		& > img {
-			@media (max-width: $mbpMobile) {
-				object-position: bottom center;
-			}
-		}
-	}
-}

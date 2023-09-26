@@ -1,0 +1,5 @@
+.materials-list--main-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--between-blocks-v-gap-xl);
+}

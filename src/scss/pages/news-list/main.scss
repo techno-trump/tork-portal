@@ -1,0 +1,11 @@
+.news-list--grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: var(--between-blocks-h-gap);
+	@media (max-width: $mbpTablet) {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media (max-width: $mbpMobile) {
+		grid-template-columns: 1fr;
+	}
+}

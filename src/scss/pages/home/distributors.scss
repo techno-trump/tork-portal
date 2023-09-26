@@ -1,0 +1,21 @@
+.home--distributors {
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--between-blocks-v-gap-xl) var(--between-blocks-h-gap);
+		padding-top: var(--between-blocks-h-gap);
+		@media (max-width: $mbpTablet) {
+			grid-template-columns: 1fr;
+		}
+	}
+	&__body {
+		
+	}
+	&__img-wrap {
+		padding-top: 65%;
+		margin-bottom: var(--block-v-gap);
+	}
+	&__text {
+		margin-bottom: var(--block-v-gap);
+	}
+}
