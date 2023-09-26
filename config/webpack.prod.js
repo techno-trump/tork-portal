@@ -48,7 +48,7 @@ const config = {
 	entry: getEntryPoints(paths.src),
 	output: {
 		path: `${paths.build}`,
-		filename: 'js/[name].js',
+		filename: 'js/[name].min.js',
 		publicPath: '/'
 	},
 	module: {
